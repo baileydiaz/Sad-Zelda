@@ -19,7 +19,7 @@ namespace HelloWorld
             {
                
                 Raylib.BeginDrawing();
-                Raylib.ClearBackground(Color.BLACK);
+                Raylib.ClearBackground(Color.WHITE);
                 
 
                 Raylib.EndDrawing();
