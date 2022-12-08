@@ -43,37 +43,36 @@ public class Hero{
 
 
 class thing{
+    //public thing(){
 
+    //}
+    //Public List<things> thing {get; set;} = new List<things>();
+    //public Vector2 Position = new Vector2(0,0);
+    //virtual public void Draw() {
+    //}
+    //public Color Color {get; set;}
+
+    //public ColoredThing(Color color){
+        //Color = color;
+        //return Color;
+    //}
 }
 
 class wall: thing{
 
-        //public List<fallingObjects> Objects {get; set;} = new List<fallingObjects>();
-        //public RandomObject(){
+    //public List<Object> Objects {get; set;} = new List<Object>();
+    //public wall(int Positionx, int Positiony){
+        
+    //}
+
+    //public void GenerateRandomObject(Vector2 position){
+        //Console.WriteLine("Creating a square");
+        //var square = new thing();
+        //square.Position = position;
+        //Objects.Add(Objects);
+    //}
 
     }
-
-        //public void GenerateRandomObject(Vector2 position, int whichType){
-        //switch (whichType) {
-       // case 0:
-      //  Console.WriteLine("Creating a square");
-     //   var square = new Rock(Color.YELLOW, 20);
-      //  square.Position = position;
-      //  square.Velocity = new Vector2(0, 1);
-     //   Objects.Add(square);
-     //   break;
-     //   case 1:
-     //   Console.WriteLine("Creating a circle");
-      //   var circle = new Gem(Color.RED, 20);
-      //  circle.Position = position;
-     //   circle.Velocity = new Vector2(0, 1);
-      //  Objects.Add(circle);
-      //  break;
-     //   default:
-      //  break;
-  //  }
-//}
-//}
 
 class puddles: thing{
     
