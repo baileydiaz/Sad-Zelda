@@ -18,18 +18,23 @@ public class Hero{
     public void input(){
                 var rec = Herorec; 
                 if (Raylib.IsKeyDown(KeyboardKey.KEY_D)) {
+                if (Herorec.x < 780)
                 rec.x += Speed;
                 }
                 
                 if (Raylib.IsKeyDown(KeyboardKey.KEY_A)) {
+                if (Herorec.x > 0)
                 rec.x -= Speed;
                 }
 
                 if (Raylib.IsKeyDown(KeyboardKey.KEY_W)) {
+                if (Herorec.y > 0)
                 rec.y -= Speed;
                 }
 
                 if (Raylib.IsKeyDown(KeyboardKey.KEY_S)) {
+                if (Herorec.y < 460)
+                
                 rec.y += Speed;
                 }
                 Herorec = rec;
