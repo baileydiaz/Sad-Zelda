@@ -2,7 +2,7 @@ using Raylib_cs;
 using System.Numerics;
 abstract class Character
 {
-        public Rectangle VillainRectangle{get;set;}
+    protected Rectangle VillainRectangle{get;set;}
 
 }
 
@@ -12,13 +12,16 @@ class Villain: Character
 {
     Vilrec = VillainRectangle;
 }
-    private void drawHero(){
-        Raylib.DrawRectangleRec(VilRec, Color.BLACK);
+    public Rectangle Vilrec{get;set;}
+
+    public void DrawVillain(){
+        Raylib.DrawRectangleRec(Vilrec, Color.YELLOW);
     }
 }
 
 public class Hero{
     protected List<string> Posessions {get; set;} = new List<string>();
+    bool has_sword = false;
     public Hero(int MovementSpeed, Rectangle HeroRectangle){
         Herorec = HeroRectangle;
         Speed = MovementSpeed;
@@ -51,41 +54,35 @@ public class Hero{
     }
 
     public void drawHero(){
-        Raylib.DrawRectangleRec(Herorec, Color.BLACK);
+        Raylib.DrawRectangleRec(Herorec, Color.BLUE);
     }
 }
 
 
 
 class thing{
+    public List<thing> Things {get; set;} = new List<thing>();
     public thing(){
 
     }
-    // Public List<things> thing {get; set;} = new List<things>();
-    // public Vector2 Position = new Vector2(0,0);
-    // virtual public void Draw() {
-    // }
-    // public Color Color {get; set;}
-
-    // public ColoredThing(Color color){
-    //     Color = color;
-    //     return Color;
-    // }
+    public Vector2 Position = new Vector2(0,0);
+    virtual public void Draw() {
+    }
+    public Color Color {get; set;}
+    
 }
 
 class wall: thing{
 
-    //public List<Object> Objects {get; set;} = new List<Object>();
-    //public wall(int Positionx, int Positiony){
-        
-    //}
+    public List<thing> Objects {get; set;} = new List<thing>();
+    public wall(Rectangle wall){
+        Wall = wall;
+    }
+    public Rectangle Wall{get;set;}
 
-    //public void GenerateRandomObject(Vector2 position){
-        //Console.WriteLine("Creating a square");
-        //var square = new thing();
-        //square.Position = position;
-        //Objects.Add(Objects);
-    //}
+    public void drawWall(){
+    Raylib.DrawRectangleRec(Wall, Color.RED);
+    }
 
     }
 
@@ -93,6 +90,3 @@ class puddles: thing{
     
 }
 
-class armor: thing{
-
-}
