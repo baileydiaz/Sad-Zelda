@@ -54,7 +54,7 @@ public class Hero{
     }
 
     public void drawHero(){
-        Raylib.DrawRectangleRec(Herorec, Color.BLUE);
+        Raylib.DrawRectangleRec(Herorec, Color.ORANGE);
     }
 }
 

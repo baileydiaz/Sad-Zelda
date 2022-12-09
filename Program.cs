@@ -7,11 +7,11 @@ using System.Numerics;
             var ScreenHeight = 480;
             var ScreenWidth = 800;
             var MovementSpeed = 4;
-            var Herorec = new Rectangle(ScreenWidth / 2, ScreenHeight - 30 , 20, 20);
-            var Vilrec = new Rectangle(ScreenWidth / 2, ScreenHeight - 30 , 20, 20);
-            var WallRec = new Rectangle(ScreenWidth / 2, ScreenHeight - 50 , 20, 20);
-            var WallRec2 = new Rectangle(ScreenWidth / 2, ScreenHeight - 40 , 20, 20);
-            var WallRec3 = new Rectangle(ScreenWidth / 2, ScreenHeight - 70 , 20, 20);
+            var Herorec = new Rectangle(10, 460, 20, 20);
+            var Vilrec = new Rectangle(750, 50 , 20, 20);
+            var WallRec = new Rectangle(600, 400 , 400, 20);
+            var WallRec2 = new Rectangle(200, 0 , 20, 400);
+            var WallRec3 = new Rectangle(500 ,0 , 20, 400);
             
             Hero hero = new Hero(MovementSpeed, Herorec);
             Villain villain = new Villain(Vilrec);
