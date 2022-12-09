@@ -17,6 +17,7 @@ using System.Numerics;
 
             var Puddle = new Rectangle(10 ,10 , 10, 10);
             
+            bool sword_encounter = false;
             Hero hero = new Hero(MovementSpeed, Herorec);
             Villain villain = new Villain(Vilrec);
             wall wallrec1 = new wall(WallRec);
@@ -52,18 +53,49 @@ using System.Numerics;
                         var thespike = (wall)obj;
                         if (Raylib.CheckCollisionRecs(hero.Herorec, WallRec)){
                             Raylib.DrawRectangleRec(Herorec, Color.GREEN);
+                            Raylib.CloseWindow();
                         }
                         if (Raylib.CheckCollisionRecs(hero.Herorec, WallRec2)){
                             Raylib.DrawRectangleRec(Herorec, Color.GREEN);
+                            Raylib.CloseWindow();
                         }
                         if (Raylib.CheckCollisionRecs(hero.Herorec, WallRec3)){
                             Raylib.DrawRectangleRec(Herorec, Color.GREEN);
+                            Raylib.CloseWindow();
                         }
                         if (Raylib.CheckCollisionRecs(hero.Herorec, WallRec4)){
                             Raylib.DrawRectangleRec(Herorec, Color.GREEN);
+                            Raylib.CloseWindow();
                         }
                     }
                 }
+
+                if (Raylib.CheckCollisionRecs(hero.Herorec, puddle1.Puddle)){
+                    if (hero.has_sword == false){
+                        hero.has_sword = true;
+                        }
+
+                    else{
+                        
+                    }
+
+                if (hero.has_sword == true)
+                    Raylib.DrawText("You have the goblin slaying greatsword!", ScreenWidth / 2 - 80, ScreenHeight / 2, 15, Color.WHITE);
+
+                    }
+
+
+
+                if (Raylib.CheckCollisionRecs(hero.Herorec, villain.Vilrec)){
+                    if (hero.has_sword){
+                        Raylib.DrawText("You won!", ScreenWidth / 2 - 80, ScreenHeight / 2, 15, Color.WHITE);
+                            }
+                    else{
+                        Raylib.DrawText("You died!", ScreenWidth / 2 - 80, ScreenHeight / 2, 15, Color.WHITE);
+                        Raylib.CloseWindow();
+                    }}
+
+
                 Raylib.EndDrawing();
 
             }

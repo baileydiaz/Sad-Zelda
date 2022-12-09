@@ -21,7 +21,7 @@ class Villain: Character
 
 public class Hero{
     protected List<string> Posessions {get; set;} = new List<string>();
-    bool has_sword = false;
+    public bool has_sword {get; set;} = false;
     public Hero(int MovementSpeed, Rectangle HeroRectangle){
         Herorec = HeroRectangle;
         Speed = MovementSpeed;
