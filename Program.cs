@@ -47,6 +47,23 @@ using System.Numerics;
                 villain.DrawVillain();
                 puddle1.drawPuddle();
                 hero.input();
+                foreach (var obj in thing.Things.ToList()){
+                    if (obj is wall){
+                        var thespike = (wall)obj;
+                        if (Raylib.CheckCollisionRecs(hero.Herorec, WallRec)){
+                            Raylib.DrawRectangleRec(Herorec, Color.GREEN);
+                        }
+                        if (Raylib.CheckCollisionRecs(hero.Herorec, WallRec2)){
+                            Raylib.DrawRectangleRec(Herorec, Color.GREEN);
+                        }
+                        if (Raylib.CheckCollisionRecs(hero.Herorec, WallRec3)){
+                            Raylib.DrawRectangleRec(Herorec, Color.GREEN);
+                        }
+                        if (Raylib.CheckCollisionRecs(hero.Herorec, WallRec4)){
+                            Raylib.DrawRectangleRec(Herorec, Color.GREEN);
+                        }
+                    }
+                }
                 Raylib.EndDrawing();
 
             }
