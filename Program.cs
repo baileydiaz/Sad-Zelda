@@ -10,6 +10,7 @@ using System.Numerics;
             var MovementSpeed = 4;
 
             Hero hero = new Hero(MovementSpeed, Herorec);
+            
             Raylib.InitWindow(ScreenWidth, ScreenHeight, "GameObject");
             Raylib.SetTargetFPS(60);
 
