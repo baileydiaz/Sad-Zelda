@@ -87,6 +87,13 @@ class wall: thing{
     }
 
 class puddles: thing{
-    
+    public puddles(Rectangle puddle){
+        Puddle = puddle;
+    }
+    public Rectangle Puddle{get;set;}
+
+    public void drawPuddle(){
+    Raylib.DrawRectangleRec(Puddle, Color.BLUE);
+    } 
 }
 

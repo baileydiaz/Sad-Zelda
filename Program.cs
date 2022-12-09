@@ -14,6 +14,8 @@ using System.Numerics;
             var WallRec2 = new Rectangle(0, 400 , 250, 20);
             var WallRec3 = new Rectangle(400 ,150 , 20, 400);
             var WallRec4 = new Rectangle(700 ,10 , 20, 400);
+
+            var Puddle = new Rectangle(10 ,10 , 10, 10);
             
             Hero hero = new Hero(MovementSpeed, Herorec);
             Villain villain = new Villain(Vilrec);
@@ -21,6 +23,7 @@ using System.Numerics;
             wall wallrec2 = new wall(WallRec2);
             wall wallrec3 = new wall(WallRec3);
             wall wallrec4 = new wall(WallRec4);
+            puddles puddle1 = new puddles(Puddle);
 
             thing thing = new thing(); 
             thing.Things.Add(wallrec1);
@@ -42,6 +45,7 @@ using System.Numerics;
                 wallrec3.drawWall();
                 wallrec4.drawWall();
                 villain.DrawVillain();
+                puddle1.drawPuddle();
                 hero.input();
                 Raylib.EndDrawing();
 
