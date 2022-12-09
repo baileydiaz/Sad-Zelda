@@ -34,7 +34,6 @@ using System.Numerics;
 
             Raylib.InitWindow(ScreenWidth, ScreenHeight, "GameObject");
             Raylib.SetTargetFPS(60);
-
             while (!Raylib.WindowShouldClose())
             {
                 Raylib.BeginDrawing();
@@ -51,16 +50,16 @@ using System.Numerics;
                     if (obj is wall){
                         var thespike = (wall)obj;
                         if (Raylib.CheckCollisionRecs(hero.Herorec, WallRec)){
-                            Raylib.DrawRectangleRec(Herorec, Color.GREEN);
+                            Raylib.CloseWindow();
                         }
                         if (Raylib.CheckCollisionRecs(hero.Herorec, WallRec2)){
-                            Raylib.DrawRectangleRec(Herorec, Color.GREEN);
+                            Raylib.CloseWindow();
                         }
                         if (Raylib.CheckCollisionRecs(hero.Herorec, WallRec3)){
-                            Raylib.DrawRectangleRec(Herorec, Color.GREEN);
+                            Raylib.CloseWindow();
                         }
                         if (Raylib.CheckCollisionRecs(hero.Herorec, WallRec4)){
-                            Raylib.DrawRectangleRec(Herorec, Color.GREEN);
+                            Raylib.CloseWindow();
                         }
                     }
                 }
