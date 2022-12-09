@@ -35,7 +35,6 @@ using System.Numerics;
 
             Raylib.InitWindow(ScreenWidth, ScreenHeight, "GameObject");
             Raylib.SetTargetFPS(60);
-
             while (!Raylib.WindowShouldClose())
             {
                 Raylib.BeginDrawing();

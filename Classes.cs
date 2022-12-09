@@ -97,3 +97,33 @@ class puddles: thing{
     } 
 }
 
+class game_prob{
+    
+    public game_prob(){
+
+    }
+    void decision (int selector){
+        Random rnd = new Random();
+        int[] Probability = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int rndNum1 = rnd.Next(1,10);
+        int rndNum2 = rnd.Next(1,10);
+        if(selector == 0){
+            void runAway(){
+                foreach(var i in Probability){
+                    if(rndNum1 == i | rndNum2 == i){
+                        Console.WriteLine("You were unsuccessful at running away, you must now fight the Ogre.");
+                    }
+                }
+            }
+        }
+        else if (selector == 1){
+            void fightVil(){
+                foreach(var i in Probability){
+                    if(rndNum1 == i | rndNum2 == i){
+                        Console.WriteLine("You lost to the Ogre, better luck next time Adventurer!");
+                    }
+                }
+            }
+        }
+    }
+}
