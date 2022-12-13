@@ -8,6 +8,7 @@ using System.Numerics;
             var ScreenWidth = 800;
             var MovementSpeed = 4;
             var Herorec = new Rectangle(10, 460, 20, 20);
+            var StartRec = new Rectangle(10, 460, 30, 30);
             var Vilrec = new Rectangle(750, 50 , 20, 20);
 
             var WallRec = new Rectangle(0, 100 , 450, 20);
@@ -25,6 +26,7 @@ using System.Numerics;
             wall wallrec3 = new wall(WallRec3);
             wall wallrec4 = new wall(WallRec4);
             puddles puddle1 = new puddles(Puddle);
+            startSquares start1 = new startSquares(StartRec);
 
             thing thing = new thing(); 
             thing.Things.Add(wallrec1);
@@ -39,6 +41,7 @@ using System.Numerics;
             {
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.BLACK);
+                start1.drawStartSquare();
                 hero.drawHero();
                 wallrec1.drawWall();
                 wallrec2.drawWall();
@@ -69,6 +72,12 @@ using System.Numerics;
                     }
                 }
 
+                if (Raylib.CheckCollisionRecs(hero.Herorec, start1.StartRec)){
+                    Raylib.DrawText("You are the hero. There is a goblin on the other side of the room.", ScreenWidth / 2 - 300, (ScreenHeight / 2)-30, 15, Color.WHITE);
+                    Raylib.DrawText("Stay away from the walls, but look around, you will find something to help you beat the goblin.", ScreenWidth / 2 - 300, (ScreenHeight / 2)-15, 15, Color.WHITE);
+                    Raylib.DrawText("Good Luck!", ScreenWidth / 2 - 300, ScreenHeight / 2, 15, Color.WHITE);
+                }
+
                 if (Raylib.CheckCollisionRecs(hero.Herorec, puddle1.Puddle)){
                     if (hero.has_sword == false){
                         hero.has_sword = true;
@@ -82,7 +91,6 @@ using System.Numerics;
                     Raylib.DrawText("You have the goblin slaying greatsword!", ScreenWidth / 2 - 80, ScreenHeight / 2, 15, Color.WHITE);
 
                     }
-
 
 
                 if (Raylib.CheckCollisionRecs(hero.Herorec, villain.Vilrec)){

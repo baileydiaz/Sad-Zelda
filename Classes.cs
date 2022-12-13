@@ -97,6 +97,16 @@ class puddles: thing{
     } 
 }
 
+class startSquares: thing{
+    public startSquares(Rectangle startRec){
+        StartRec = startRec;
+    }
+    public Rectangle StartRec{get; set;}
+    public void drawStartSquare(){
+        Raylib.DrawRectangleRec(StartRec, Color.WHITE);
+    }
+}
+
 class game_prob{
     
     public game_prob(){
